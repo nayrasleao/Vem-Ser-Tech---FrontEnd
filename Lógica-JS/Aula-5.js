@@ -107,7 +107,7 @@ function criarListaDeContatos() {
   }
 
   function mostrarListaDeContatos(lista) {
-    console.log('\nLista de Contatos Cadstrados:');
+    console.log('\nLista de Contatos Cadastrados:');
     for (const contato of lista) {
       console.log(`
       Nome: ${contato.nome}, 
