@@ -1,21 +1,17 @@
-// # Exercicios - Aula 2
-
-// Esses exercícios são sobre vetores e matrizes em JavaScript, sem o uso de laços de repetição. Eles são destinados para prática e não são obrigatórios.
-
-// ## Vetores
-
 // ### Exercício 1: Soma dos elementos de um vetor
 
 // Dado um vetor `numeros` com 5 elementos, calcule a soma de todos os valores e armazene o resultado na variável `soma`. Utilize o índice para acessar os valores do vetor e realizar os cálculos.
 
 
-
 const numeros = [10, 5, 8, 12, 3, 19];
-let soma = numeros[0]+numeros[1]+numeros[2]+numeros[3]+numeros[4]+numeros[5];
-console.log("Ex1 - A soma de todos os valores do vetor é:  " + soma)
+let somaN = 0;
+// let soma = numeros[0]+numeros[1]+numeros[2]+numeros[3]+numeros[4]+numeros[5];
 
-
-
+for (let i = 0; i < numeros.length; i++) {
+    somaN+=numeros[i];
+    
+}
+console.log("Ex1 - A soma de todos os valores do vetor é:  " + somaN)
 
 
 
@@ -25,7 +21,11 @@ console.log("Ex1 - A soma de todos os valores do vetor é:  " + soma)
 
 
 const notas = [17, 28, 39, 96, 55];
-let media = (notas[0]+notas[1]+notas[2]+notas[3]+notas[4]) / 4;
+let media = 0;
+// let media = (notas[0]+notas[1]+notas[2]+notas[3]+notas[4]) / notas.length;
+for(let i=0; i < notas.length; i++){
+    media+=notas[i] / notas.length;
+}
 console.log("Ex2 - A média dos elementos do vetor é: " + media)
 
 
@@ -51,10 +51,19 @@ const matriz = [
   [5, 8, 10]
 ];
 
-let produto = matriz[0][0]*matriz[0][1]*matriz[0][2]*matriz[1][0]*matriz[1][1]*matriz[1][2]*matriz[2][0]*matriz[2][1]*matriz[2][2];
+let produto = 1;
+
+// let produto = matriz[0][0]*matriz[0][1]*matriz[0][2]*matriz[1][0]*matriz[1][1]*matriz[1][2]*matriz[2][0]*matriz[2][1]*matriz[2][2];
+
+for(let i = 0; i < matriz.length; i++){
+    for(let j = 0; j < matriz[i].length; j++){
+        let aux  = matriz[i][j];
+        produto*= aux;
+
+    }
+}
 
 console.log("Ex4 - O produto dos elementos da matriz é: " + produto)
-
 
 
 // Exercício 5: Média dos elementos de uma matriz
@@ -68,7 +77,20 @@ const notasM = [
   [48, 39, 88]
 ];
 
-let mediaM = (notasM[0][0]+notasM[0][1]+notasM[0][2]+notasM[1][0]+notasM[1][1]+notasM[1][2]+notasM[2][1]+notasM[2][2] ) / notasM.length;
+
+let mediaM = 0;
+
+// let mediaM = (notasM[0][0]+notasM[0][1]+notasM[0][2]+notasM[1][0]+notasM[1][1]+notasM[1][2]+notasM[2][1]+notasM[2][2] ) / notasM.length;
+
+for(let i = 0; i < notasM.length; i++){
+    for(let j = 0; j < notasM[i].length; j++){
+        let soma= 0;
+        let aux  = notasM[i][j];
+        soma += aux;
+        mediaM = soma / notasM.length;
+
+    }
+}
 console.log("Ex5 - A média dos elementos da matriz é: " + mediaM)
 
 
@@ -83,5 +105,4 @@ const valoresM = [
 ];
 
 let menorValor = Math.min(valoresM[0][0],valoresM[0][1],valoresM[0][2],valoresM[0][3], valoresM[1][0], valoresM[1][1], valoresM[1][2], valoresM[1][3]);
-
 console.log("Ex6 - O menor valor da matriz é: " + menorValor)
