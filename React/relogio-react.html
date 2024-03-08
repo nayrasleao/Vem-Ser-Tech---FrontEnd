@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 01 - Relógio Javascript</title>
+    <title>Aula 01 - Relógio React</title>
+    <script type="text/javascript" src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div id="root"></div>
 
-    <script type="text/javascript">
+    <script type="text/babel">
         const rootElement = document.getElementById('root')
 
         function Clock() {
             const time = new Date().toLocaleString()
-            const element = `
-            <div>
-                <h1>Meu Relógio</h1>
-                <p> ${time}</p>
-            </div>
-            `
-            rootElement.innerHTML = element
+            const element = (
+                <div>
+                    <h1>Meu relóginho</h1>
+                    <p>{time}</p>
+                </div>
+            )
+            ReactDOM.render(element, rootElement)
         }
 
         setInterval(Clock, 1000)
