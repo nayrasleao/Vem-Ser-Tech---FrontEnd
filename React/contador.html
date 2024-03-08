@@ -9,15 +9,31 @@
     <script type="text/javascript" src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+    <!-- Sempre terrei essa div root -->
     <div id="root"></div>
 
     <script type="text/babel">
-        const rootElement = document.getElementById('root')
 
-        function App() {
-            const element = <div></div>;            
+        function Button(props) {
+            return <button>{props.children}</button>
         }
-        ReactDOM.render(element, rootElement)
+        
+        function App() {
+            return (
+            <>
+            <div>Olá Mundo!</div> 
+            <Button children= "Botão Aleatório" />  
+            <Button>Botão 2</Button>      
+      
+            </>
+            )
+        }
+
+       
+        const container = document.getElementById('root')
+        const root = ReactDOM.createRoot(container)
+        root.render(<App />)
+
     </script>
 </body>
 </html>
