@@ -1,0 +1,3 @@
+1- Para saber o tamanho do meu browser(tela), posso declarar um let para receber esse valor, depois eu atribuo um
+	window.innerWidth a variavel, ele é o responsavel pro pegar esse informação. Para impimir no console esse valor como teste posso usar um:
+	console.log('result: ', result)
